@@ -1,4 +1,5 @@
 <div class="registerdiv">
+    <form action="/users/register" method="POST">
     <div>
         <label>
             <input type="text" name="firstName" placeholder="First Namaste" class="register"><br>
@@ -7,6 +8,11 @@
     <div>
         <label>
             <input type="text" name="lastName" placeholder="Last Namaste" class="register"><br>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="text" name="username" placeholder="Usernamaste" class="register"><br>
         </label>
     </div>
     <div>
@@ -23,5 +29,6 @@
         <label>
             <button type="submit" class="registerButton">Register</button>
         </label>
+    </form>
     </div>
 </div>
