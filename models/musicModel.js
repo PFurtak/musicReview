@@ -29,6 +29,17 @@ class MusicModel {
       console.error('ERROR: ', error);
     }
   }
+  static async getRevById(id) {
+    try {
+      const res = await db.any(`SELECT *
+      FROM reviews
+      WHERE reviews.albumid = ${id};`);
+      console.log(res);
+      return res;
+    } catch (error) {
+      console.error('ERROR: ', error);
+    }
+  }
   static async addReview(albumid, title, review) {
     try {
       const res = await db.one(

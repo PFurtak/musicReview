@@ -1,3 +1,4 @@
+<a href="/"><button>Albums</button></a>
 <ul>
   ${data.map(entry => `
   <li>${entry.band}</li>
@@ -7,6 +8,14 @@
 </ul>
 <hr />
 <h2>Reviews</h2>
+<ul>
+  ${rev.map(entry => `
+  <li><strong>Title:</strong> ${entry.title}</li>
+  <li><strong>Review:</strong> ${entry.review}</li>
+
+  ` ).join('')}
+</ul>
+<hr />
 <form action="/" method="post">
   <input type="hidden" name="albumid" value="${data[0].id}" />
   <label
