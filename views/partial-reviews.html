@@ -1,0 +1,27 @@
+<ul>
+  ${data.map(entry => `
+  <li>${entry.band}</li>
+  <li>Category: ${entry.category}</li>
+  <li>Released: ${entry.release_year}</li>
+  ` ).join('')}
+</ul>
+<hr />
+<h2>Reviews</h2>
+<form action="/" method="post">
+  <input type="hidden" name="restaurantid" value="${data[0].id}" />
+  <label
+    >Title:
+    <input type="text" name="review_title" placeholder="Review Title" />
+  </label>
+  <label
+    >My Review:
+    <textarea
+      name="review_text"
+      placeholder="My review..."
+      id=""
+      cols="30"
+      rows="10"
+    ></textarea>
+    <button type="submit">Submit Review</button>
+  </label>
+</form>
