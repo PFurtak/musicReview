@@ -6,3 +6,35 @@ body {
 a {
   color: #00B7FF;
 }
+
+.registerdiv {
+  text-align: center;
+}
+
+html {
+  background-color: #00B7FF;
+}
+
+
+.register {
+ margin: 2%;
+ width: 40%;
+ height: 10%;
+ text-align: center;
+ border-radius: 15px;
+ font-size: 1.5rem;
+ border: none;
+ 
+}
+
+.registerButton {
+  width: 50%;
+  height: 10%;
+  background-color: ghostwhite;
+  font-size: 1.5rem;
+  margin: 2%;
+  border-radius: 10px;
+}
+
+
+
