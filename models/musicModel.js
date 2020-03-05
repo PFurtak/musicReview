@@ -29,6 +29,17 @@ class MusicModel {
       console.error('ERROR: ', error);
     }
   }
+  static async addReview(albumid, title, review) {
+    try {
+      const res = await db.one(
+        `INSERT INTO reviews (reviewerid, albumid, title, review) VALUES ($1, $2, $3, $4) RETURNING id`,
+        [3, albumid, title, review]
+      );
+    } catch (error) {
+      console.error('ERROR: ', error);
+      return error;
+    }
+  }
 }
 
 module.exports = MusicModel;

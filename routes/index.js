@@ -13,4 +13,16 @@ router.get('/', async function(req, res, next) {
   });
 });
 
+/* POST review to db */
+router.post('/', async function(req, res) {
+  const { albumid, review_title, review_text } = req.body;
+  const postData = await musicModel.addReview(
+    albumid,
+    review_title,
+    review_text
+  );
+  console.log(postData);
+  res.sendStatus(200);
+});
+
 module.exports = router;
