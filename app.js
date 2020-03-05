@@ -6,6 +6,7 @@ const es6Renderer = require('express-es6-template-engine');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const reviewRouter = require('./routes/albumReview');
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.set('view engine', 'html');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/reviews', reviewRouter);
 
 module.exports = app;
