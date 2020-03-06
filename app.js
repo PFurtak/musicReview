@@ -7,8 +7,8 @@ const es6Renderer = require('express-es6-template-engine');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const reviewRouter = require('./routes/albumReview');
-const loginRouter = require('./routes/login');
-const registerRouter = require('./routes/register');
+// const loginRouter = require('./routes/login');
+// const registerRouter = require('./routes/register');
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.set('view engine', 'html');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/reviews', reviewRouter);
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
+// app.use('/login', loginRouter);
+// app.use('/register', registerRouter);
 
 module.exports = app;
