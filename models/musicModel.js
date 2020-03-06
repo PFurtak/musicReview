@@ -1,4 +1,5 @@
 const db = require('./conn');
+bcrypt = require('bcryptjs');
 
 class MusicModel {
   constructor(id, name, band, release_year, category) {
@@ -46,17 +47,7 @@ class MusicModel {
         `INSERT INTO reviews (reviewerid, albumid, title, review) VALUES ($1, $2, $3, $4) RETURNING id`,
         [3, albumid, title, review]
       );
-    } catch (error) {
-      console.error('ERROR: ', error);
-      return error;
-    }
-  }
-  static async addUser(username, email, password) {
-    try {
-      const res = await db.one(
-        `INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING id`,
-        [username, email, password]
-      );
+      return res;
     } catch (error) {
       console.error('ERROR: ', error);
       return error;
