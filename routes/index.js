@@ -25,12 +25,4 @@ router.post('/', async function(req, res) {
   res.sendStatus(200);
 });
 
-/* POST user creation */
-router.post('/users/register', async function(req, res) {
-  const { username, email, password } = req.body;
-  const createUser = await musicModel.addUser(username, email, password);
-  console.log(createUser);
-  res.sendStatus(200);
-});
-
 module.exports = router;
