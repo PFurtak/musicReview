@@ -11,9 +11,9 @@ class MusicModel {
   }
   static async getAllAlbums() {
     try {
-      const resonse = await db.any(`SELECT *
+      const response = await db.any(`SELECT *
           FROM albums;`);
-      return resonse;
+      return response;
     } catch (error) {
       console.error('error: ', error);
       return error;

@@ -35,10 +35,11 @@ class User {
 
       const isValid = this.checkPassword(response.password);
       if (!!isValid) {
-        console.log('PASS', isValid);
+        console.log('Access granted.');
       } else {
-        console.log('FAIL', isValid);
+        console.log('Access denied.');
       }
+      return isValid;
     } catch (error) {
       console.error('ERROR: ', error);
       return error;

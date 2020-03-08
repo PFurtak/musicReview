@@ -26,12 +26,21 @@ router.get('/register', function(req, res, next) {
   });
 });
 
-router.post('/login', function(req, res, next) {
-  const { username, email, password } = req.body;
+router.post('/login', async function(req, res, next) {
+  const { email, password } = req.body;
 
-  const user = new UserModel(null, username, email, password);
-  user.loginUser();
-  res.sendStatus(200);
+  const user = new UserModel(null, null, email, password);
+  const loginResponse = await user.loginUser();
+  console.log(loginResponse);
+
+  if (!!loginResponse.isValid) {
+    req.session.is_logged_in = isValid;
+    req.session.user_id = loginResponse.user_id;
+    req.session.username = loginResponse.username;
+    res.redirect(200, '/');
+  } else {
+    res.sendStatus(403);
+  }
 });
 
 router.post('/register', function(req, res, next) {
